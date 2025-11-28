@@ -1,0 +1,96 @@
+{
+  "dish": [
+    {
+      "id": 1,
+      "name": "Pan Granjero con Pollo Guisado, Queso Amarillo y Salsa",
+      "type": "Aves",
+      "description": "Pan hogaza artesanal relleno de jugoso pollo guisado, queso amarillo gratinado y nuestra salsa secreta de la casa. ¡Una delicia para los amantes del sabor!",
+      "image": "/img/plato-1.png",
+      "dish_type": "Desayuno",
+      "ingredients": [
+        {
+          "name": "Pan hogaza artesanal",
+          "quantity": "1 pieza"
+        },
+        {
+          "name": "Pollo (para guisar y desmechar)",
+          "quantity": "300 gramos"
+        },
+        {
+          "name": "Queso Amarillo",
+          "quantity": "150 gramos"
+        },
+        {
+          "name": "Salsa secreta de la casa",
+          "quantity": "1 taza"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Arepa de Pollo Guisado y Queso Llanero",
+      "type": "Aves",
+      "description": "La arepa más popular. Rellena de jugoso pollo guisado en salsa criolla y abundante queso llanero fresco y salado. ¡El clásico que enamora!",
+      "image": "/img/plato-2.png",
+      "dish_type": "Desayuno",
+      "ingredients": [
+        {
+          "name": "Arepa",
+          "quantity": "2 pieza"
+        },
+        {
+          "name": "Pollo guisado",
+          "quantity": "150 gramos"
+        },
+        {
+          "name": "Queso Llanero (o queso blanco salado)",
+          "quantity": "150 gramos"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Arepa de Revoltillo y Queso Llanero",
+      "type": "Huevos y Lácteos",
+      "description": "Arepa crocante rellena de un rico revoltillo de huevos y cubierta con abundante queso llanero fresco. El desayuno más completo y sabroso.",
+      "image": "/img/plato-4.png",
+      "dish_type": "Desayuno",
+      "ingredients": [
+        {
+          "name": "Arepa",
+          "quantity": "2 pieza"
+        },
+        {
+          "name": "Huevos (para el revoltillo)",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Queso Llanero (o queso blanco salado)",
+          "quantity": "150 gramos"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cachitos de Jamón y Queso",
+      "type": "Cerdo / Embutidos",
+      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
+      "image": "/img/plato-3.png",
+      "dish_type": "Desayuno",
+      "ingredients": [
+        {
+          "name": "Pan brioche ligeramente dulce",
+          "quantity": "1 pieza"
+        },
+        {
+          "name": "Jamón de Pierna o Ahumado",
+          "quantity": "250 gramos"
+        },
+        {
+          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
+          "quantity": "100 gramos"
+        }
+      ]
+    }
+  ]
+}
