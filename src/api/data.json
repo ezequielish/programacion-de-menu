@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Pan Granjero con Pollo Guisado, Queso Amarillo y Salsa",
-      "type": "Aves",
+      "type": "1",
       "description": "Pan hogaza artesanal relleno de jugoso pollo guisado, queso amarillo gratinado y nuestra salsa secreta de la casa. ¡Una delicia para los amantes del sabor!",
       "image": "/img/plato-1.png",
       "dish_type": "Desayuno",
@@ -29,7 +29,7 @@
     {
       "id": 2,
       "name": "Arepa de Pollo Guisado y Queso Llanero",
-      "type": "Aves",
+      "type": "1",
       "description": "La arepa más popular. Rellena de jugoso pollo guisado en salsa criolla y abundante queso llanero fresco y salado. ¡El clásico que enamora!",
       "image": "/img/plato-2.png",
       "dish_type": "Desayuno",
@@ -51,7 +51,7 @@
     {
       "id": 3,
       "name": "Arepa de Revoltillo y Queso Llanero",
-      "type": "Huevos y Lácteos",
+      "type": "5",
       "description": "Arepa crocante rellena de un rico revoltillo de huevos y cubierta con abundante queso llanero fresco. El desayuno más completo y sabroso.",
       "image": "/img/plato-4.png",
       "dish_type": "Desayuno",
@@ -73,10 +73,76 @@
     {
       "id": 4,
       "name": "Cachitos de Jamón y Queso",
-      "type": "Cerdo / Embutidos",
+      "type": "4",
       "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
       "image": "/img/plato-3.png",
       "dish_type": "Desayuno",
+      "ingredients": [
+        {
+          "name": "Pan brioche ligeramente dulce",
+          "quantity": "1 pieza"
+        },
+        {
+          "name": "Jamón de Pierna o Ahumado",
+          "quantity": "250 gramos"
+        },
+        {
+          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
+          "quantity": "100 gramos"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Bisctek",
+      "type": "2",
+      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
+      "image": "/img/plato-3.png",
+      "dish_type": "Almuerzo",
+      "ingredients": [
+        {
+          "name": "Pan brioche ligeramente dulce",
+          "quantity": "1 pieza"
+        },
+        {
+          "name": "Jamón de Pierna o Ahumado",
+          "quantity": "250 gramos"
+        },
+        {
+          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
+          "quantity": "100 gramos"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Pasta con Carne",
+      "type": "2",
+      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
+      "image": "/img/plato-3.png",
+      "dish_type": "Almuerzo",
+      "ingredients": [
+        {
+          "name": "Pan brioche ligeramente dulce",
+          "quantity": "1 pieza"
+        },
+        {
+          "name": "Jamón de Pierna o Ahumado",
+          "quantity": "250 gramos"
+        },
+        {
+          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
+          "quantity": "100 gramos"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Pan con Carne",
+      "type": "2",
+      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
+      "image": "/img/plato-3.png",
+      "dish_type": "Cena",
       "ingredients": [
         {
           "name": "Pan brioche ligeramente dulce",

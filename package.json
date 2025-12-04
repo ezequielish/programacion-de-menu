@@ -16,8 +16,11 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "v-calendar": "^3.1.2",
     "vue": "^3.5.25",
-    "vue-router": "^4.6.3"
+    "vue-router": "^4.6.3",
+    "vue3-toastify": "^0.2.8"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.3",

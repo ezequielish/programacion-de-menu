@@ -1,8 +1,10 @@
 @import './base.css';
+@import 'v-calendar/style.css';
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  padding-bottom: 5rem;
 }
