@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed } from 'vue';
 import { DatePicker } from 'v-calendar';
 // Asegúrate de que esta importación de estilos esté correcta en tu proyecto
 import 'v-calendar/style.css';
@@ -28,13 +28,6 @@ const localSelectedDate = computed({
     }
 });
 
-
-watch(() => props.attributes, (newValue) => {
-    console.log({
-        newValue
-    });
-
-})
 // -------------------
 // 1. ESTADO REACTIVO
 // -------------------

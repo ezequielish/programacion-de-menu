@@ -139,7 +139,7 @@ const handleSaveDish = (index) => {
 <template>
     <div class="filters">
         <div>
-            <p class="f-t">Fecha de programación</p>
+            <p class="f-t">Fecha de programación <span v-if="(typeof date != 'object')"> {{ date }}</span></p>
             <input type="date" placeholder="" v-model="date" />
         </div>
         <select v-model="dishType" @change="handleChangeCategoryAndType">

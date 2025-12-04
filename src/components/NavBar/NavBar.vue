@@ -1,5 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+
 // Define las opciones de navegación
 const navItems = ref([
     { name: 'Menús', icon: '📋', path: '/' },
@@ -9,20 +11,23 @@ const navItems = ref([
 ]);
 
 // Estado reactivo para la opción activa (simulación de ruta)
-const activePath = ref('/');
+// const activePath = ref('/');
+const route = useRoute();
+const currentUrl = ref("/")
 
-// Función para manejar la navegación (simulación)
-const navigateTo = (path) => {
-    activePath.value = path;
-    console.log('Navegando a:', path);
-    // En una aplicación real, usarías vue-router: router.push(path)
-};
+watch(() => route.path, (newValue, oldValue) => {
+    // Cuando la ruta de navegación principal cambie, cierra cualquier menú abierto.
+    if (newValue != oldValue) {
+        currentUrl.value = newValue
+
+    }
+});
 </script>
 
 <template>
     <nav class="bottom-nav">
         <RouterLink :to="item.path" v-for="item in navItems" :key="item.name" :href="item.path"
-            :class="['nav-item', { active: item.path === activePath }]">
+            :class="['nav-item', { active: item.path === currentUrl }]">
             <span class="nav-icon">{{ item.icon }}</span>
             <span class="nav-text">{{ item.name }}</span>
         </RouterLink>
