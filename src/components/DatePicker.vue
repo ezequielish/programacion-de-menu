@@ -4,7 +4,6 @@ import { DatePicker } from 'v-calendar';
 // Asegúrate de que esta importación de estilos esté correcta en tu proyecto
 import 'v-calendar/style.css';
 
-
 const props = defineProps({
     selectedDate: {
         type: Date,

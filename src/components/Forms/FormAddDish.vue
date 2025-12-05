@@ -9,8 +9,8 @@ const categoriesIngredient = reactive([
     'Aves',
     'Carnes',
     'Pescado',
-    'Jamón',
-    'Huevos y Lácteos'
+    'Cerdo',
+    'Huevos y Lácteos',
 ]);
 
 function formatLocalDate(date) {
@@ -153,7 +153,7 @@ const handleSaveDish = (index) => {
             <option value="1">Aves</option>
             <option value="2">Carnes</option>
             <option value="3">Pescado</option>
-            <option value="4">Jamón</option>
+            <option value="4">Cerdo</option>
             <option value="5">Huevos y Lácteos</option>
         </select>
     </div>
@@ -270,5 +270,14 @@ const handleSaveDish = (index) => {
 
 .description {
     margin-top: .5rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
 }
 </style>

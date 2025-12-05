@@ -2,7 +2,7 @@
   "dish": [
     {
       "id": 1,
-      "name": "Pan Granjero con Pollo Guisado, Queso Amarillo y Salsa",
+      "name": "Pan Granjero con Pollo Guisado, Queso Amarillo y Salsa.",
       "type": "1",
       "description": "Pan hogaza artesanal relleno de jugoso pollo guisado, queso amarillo gratinado y nuestra salsa secreta de la casa. ¡Una delicia para los amantes del sabor!",
       "image": "/img/plato-1.png",
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "name": "Arepa de Pollo Guisado y Queso Llanero",
+      "name": "Arepas de Pollo Guisado y Queso Llanero.",
       "type": "1",
       "description": "La arepa más popular. Rellena de jugoso pollo guisado en salsa criolla y abundante queso llanero fresco y salado. ¡El clásico que enamora!",
       "image": "/img/plato-2.png",
@@ -50,7 +50,7 @@
     },
     {
       "id": 3,
-      "name": "Arepa de Revoltillo y Queso Llanero",
+      "name": "Arepa de Revoltillo y Queso Llanero.",
       "type": "5",
       "description": "Arepa crocante rellena de un rico revoltillo de huevos y cubierta con abundante queso llanero fresco. El desayuno más completo y sabroso.",
       "image": "/img/plato-4.png",
@@ -72,7 +72,7 @@
     },
     {
       "id": 4,
-      "name": "Cachitos de Jamón y Queso",
+      "name": "Cachitos de Jamón y Queso.",
       "type": "4",
       "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
       "image": "/img/plato-3.png",
@@ -94,69 +94,219 @@
     },
     {
       "id": 5,
-      "name": "Bisctek",
-      "type": "2",
-      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
-      "image": "/img/plato-3.png",
-      "dish_type": "Almuerzo",
-      "ingredients": [
-        {
-          "name": "Pan brioche ligeramente dulce",
-          "quantity": "1 pieza"
-        },
-        {
-          "name": "Jamón de Pierna o Ahumado",
-          "quantity": "250 gramos"
-        },
-        {
-          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
-          "quantity": "100 gramos"
-        }
-      ]
+      "name": "Pan Sobado con Queso Paisa, Jamón de pierna, Tomate, Lechuga y Salsa.",
+      "type": "4",
+      "description": "El pan sobado más apetitoso. Relleno con jugoso jamón de pierna, rebanadas de queso paisa, tomate, lechuga fresca y una salsa especial. ¡El sándwich que te alegra la mañana!",
+      "image": "/img/plato-5.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
     },
     {
       "id": 6,
-      "name": "Pasta con Carne",
-      "type": "2",
-      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
-      "image": "/img/plato-3.png",
-      "dish_type": "Almuerzo",
-      "ingredients": [
-        {
-          "name": "Pan brioche ligeramente dulce",
-          "quantity": "1 pieza"
-        },
-        {
-          "name": "Jamón de Pierna o Ahumado",
-          "quantity": "250 gramos"
-        },
-        {
-          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
-          "quantity": "100 gramos"
-        }
-      ]
+      "name": "Pan Sobado con Pollo, Tomate, Lechuga y Salsa.",
+      "type": "1",
+      "description": "El pan sobado más apetitoso. Relleno con jugoso pollo desmechado, rebanadas de tomate, lechuga fresca y una salsa especial. ¡El sándwich que te alegra la mañana!",
+      "image": "/img/plato-6.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
     },
     {
       "id": 7,
-      "name": "Pan con Carne",
+      "name": "Sandwich de Queso Paisa, Jamón de pierna, Tomate, Lechuga y Salsa.",
+      "type": "4",
+      "description": "El clásico favorito. Con jamón de pierna, fresco queso paisa, y lo más fresco: tomate y lechuga entre dos rebanadas de pan. ¡Fresco y delicioso!",
+      "image": "/img/plato-7.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 8,
+      "name": "Arepa Reina Pepiada Pollo y Aguacate.",
+      "type": "1",
+      "description": "La arepa más famosa. Rellena de una deliciosa y cremosa mezcla de pollo desmechado y aguacate (palta), con un toque de mayonesa. ¡Simplemente la reina del sabor!",
+      "image": "/img/plato-8.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 9,
+      "name": "Desayuno Criollo Venezolano.",
       "type": "2",
-      "description": "Delicioso pan brioche ligeramente dulce, relleno con jamón selecto y queso cremoso. El clásico indiscutible que te alegra el día.",
-      "image": "/img/plato-3.png",
+      "description": "El auténtico festín mañanero. Una combinación poderosa de arepa, caraotas (frijoles negros), queso llanero, perico (huevos revueltos) y carne mechada o pernil. ¡El sabor de Venezuela en un solo plato!",
+      "image": "/img/plato-9.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 10,
+      "name": "Panquecas de Jamón y Queso.",
+      "type": "4",
+      "description": "La panqueca dulce se vuelve salada. Rellena de jugoso jamón y queso derretido, son suaves por dentro y doradas por fuera. ¡Perfectas para un desayuno diferente y delicioso!",
+      "image": "/img/plato-10.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 11,
+      "name": "Desayuno Americano.",
+      "type": "5",
+      "description": "Un desayuno clásico y completo. Incluye huevos revueltos, tiras de tocino crujiente, pan tostado o panqueques. ¡El inicio perfecto para cualquier día!",
+      "image": "/img/plato-11.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 12,
+      "name": "MiniLunch de Jamón y Queso.",
+      "type": "4",
+      "description": "Un pequeño placer lleno de sabor. Es la porción ideal de pan esponjoso con jamón y queso para un clásico de desayunos. ¡Perfecto para un antojo!",
+      "image": "/img/plato-12.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 13,
+      "name": "MiniLunch de Jamón y Queso.",
+      "type": "1",
+      "description": "El snack crujiente favorito. Empanadas de maíz fritas y doradas, rellenas de una sabrosa combinación de carne mechada, pollo, queso, etc. ¡Ideales para acompañar con una buena salsa!",
+      "image": "/img/plato-13.png",
+      "dish_type": "Desayuno",
+      "ingredients": []
+    },
+    {
+      "id": 14,
+      "name": "Chuleta Ahumada en Salsa de Naranja, Con Pasta, Queso, Tajada y Sopa.",
+      "type": "4",
+      "description": "Jugosa chuleta ahumada bañada en una deliciosa y agridulce salsa de naranja, acompañada de pasta cremosa, queso rallado, una dulce tajada y un reconfortante plato de sopa. ¡La combinación perfecta para sorprender a tu paladar!",
+      "image": "/img/plato-14.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 15,
+      "name": "Pabellón Criollo Arroz, Caraotas Carne Mechada y Tajadas.",
+      "type": "2",
+      "description": "El plato nacional de Venezuela. La combinación perfecta de arroz blanco, caraotas (frijoles negros) guisadas, carne mechada jugosa y plátano maduro frito (tajadas). ¡El clásico que representa el sabor de la tierra!",
+      "image": "/img/plato-15.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 16,
+      "name": "Dorado Frito con Arroz , Tostones y Ensalada.",
+      "type": "3",
+      "description": "Pescado Dorado frito hasta quedar crujiente, acompañado de arroz blanco, crujientes tostones de plátano verde y una fresca ensalada. ¡El sabor del mar en tu mesa!",
+      "image": "/img/plato-16.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 17,
+      "name": "Pasticho de Carne, Platano al Horno y Pan con Ajo.",
+      "type": "2",
+      "description": "Una comida completa con toque italiano y criollo. Disfruta de una porción de pasticho (lasaña) de carne, acompañado de dulce plátano maduro al horno y un crujiente pan de ajo. ¡La mezcla de sabores perfecta para una gran cena!",
+      "image": "/img/plato-17.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 18,
+      "name": "Chuleta de Cerdo en Salsa de Piña, Arroz Verde, Tajada y Sopa.",
+      "type": "4",
+      "description": "Jugosa chuleta de cerdo bañada en una agridulce salsa de piña, acompañada de aromático arroz verde, una dulce tajada de plátano y una reconfortante sopa. ¡La combinación perfecta de dulce y salado!",
+      "image": "/img/plato-18.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 19,
+      "name": "Estofado de Pollo con Arroz Tajada y Sopa de Lentejas.",
+      "type": "1",
+      "description": "Disfruta del sabor profundo del estofado de pollo acompañado de arroz, la dulzura de la tajada de plátano, y una nutritiva sopa de lentejas calentita. ¡La comida completa que se siente como un abrazo!",
+      "image": "/img/plato-19.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 20,
+      "name": "Alfóndigas de Carne con Pasta Linguini, Queso Parmesano Tajada y Pan.",
+      "type": "2",
+      "description": "Jugosas albóndigas de carne sobre suave pasta linguini con salsa, cubiertas con queso parmesano, y la dulzura de una tajada de plátano. ¡Sabor internacional y criollo en un plato!",
+      "image": "/img/plato-20.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 21,
+      "name": "Asado Negro, Tajadas y Ensalada Roja.",
+      "type": "2",
+      "description": "Jugoso Asado Negro cocido a fuego lento con su salsa dulce y oscura, acompañado de dulces tajadas de plátano y fresca ensalada. ¡Un plato de tradición y sabor profundo!",
+      "image": "/img/plato-21.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 22,
+      "name": "Milanesa a la Parmesana con Pasta, Platano y Pan.",
+      "type": "1",
+      "description": "Tierna milanesa a la parmesana gratinada con queso, acompañada de deliciosa pasta y el toque dulce de un plátano maduro. ¡Un plato potente y lleno de sabor!",
+      "image": "/img/plato-22.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 23,
+      "name": "Rueda de Pescado con Papas y Ensalada Rayada.",
+      "type": "3",
+      "description": "Una deliciosa rueda de pescado, acompañada de ricas papas y una fresca ensalada rayada de vegetales. ¡Sabor simple y delicioso!",
+      "image": "/img/plato-23.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 24,
+      "name": "Pollo al Horno, Pasta y Sopa de Verduras.",
+      "type": "1",
+      "description": "Jugoso pollo al horno con piel dorada, acompañado de sabrosa pasta y una nutritiva sopa de verduras. ¡Un plato casero, completo y delicioso!",
+      "image": "/img/plato-24.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 25,
+      "name": "Parrillla Mixta Bollito y Guasacaca.",
+      "type": "2",
+      "description": "Parrilla Mixta con variedad de carnes jugosas, acompañada del tradicional Bollito de maíz y la fresca Guasacaca picadita. ¡Perfecto para compartir en un gran momento!",
+      "image": "/img/plato-25.png",
+      "dish_type": "Almuerzo",
+      "ingredients": []
+    },
+    {
+      "id": 26,
+      "name": "Pepito de Pollo.",
+      "type": "1",
+      "description": "¡El rey de la comida rápida! Un pan tipo sub relleno con jugosos trozos de pollo a la plancha, mucho queso rallado y bañado en tus salsas favoritas. ¡Simplemente irresistible!",
+      "image": "/img/plato-26.png",
       "dish_type": "Cena",
-      "ingredients": [
-        {
-          "name": "Pan brioche ligeramente dulce",
-          "quantity": "1 pieza"
-        },
-        {
-          "name": "Jamón de Pierna o Ahumado",
-          "quantity": "250 gramos"
-        },
-        {
-          "name": "Queso Rallado o en Tiras (Ej. Queso Amarillo o de Cabra)",
-          "quantity": "100 gramos"
-        }
-      ]
+      "ingredients": []
+    },
+    {
+      "id": 27,
+      "name": "Alitas al Horno Arepitas y Ensalada.",
+      "type": "1",
+      "description": "Crujientes alitas de pollo al horno sazonadas a la perfección, servidas con mini arepitas para rellenar y una fresca ensalada para el balance perfecto. ¡Ideales para cenar con amigos!",
+      "image": "/img/plato-27.png",
+      "dish_type": "Cena",
+      "ingredients": []
+    },
+    {
+      "id": 28,
+      "name": "Cachapas con Queso de Mano.",
+      "type": "5",
+      "description": "La combinación dulce y salada más querida. Una Cachapa de maíz tierno, dulce y esponjosa, rellena con el suave y cremoso Queso de Mano derretido. ¡Un manjar tradicional irresistible!",
+      "image": "/img/plato-28.png",
+      "dish_type": "Cena",
+      "ingredients": []
     }
   ]
 }
