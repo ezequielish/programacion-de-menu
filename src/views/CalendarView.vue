@@ -65,10 +65,10 @@ const menuTypeColor = {
 
 onMounted(() => {
   if (programmedMenus) {
-    dishes.value = JSON.parse(programmedMenus);
+    const _dishes = JSON.parse(programmedMenus);
+    dishes.value = _dishes.map(dish => dish.date === formatLocalDate(selectedDate.value) ? dish : null).filter(dish => dish !== null);
 
-    const newDish = dishes.value.map((menu, indx) => (
-
+    const newDish = _dishes.map((menu, indx) => (
       {
 
         key: `${menu.dish.dish_type}-${(indx + 1)}`,
@@ -107,6 +107,9 @@ watch(selectedDate, (newValue, oldValue) => {
   // 3. Obtener el día
   const day = dateObject.getDate().toString().padStart(2, '0');
   let _date = typeof newValue == 'object' ? `${year}-${month}-${day}` : newValue;
+
+  const d = JSON.parse(programmedMenus);
+  dishes.value = d.map(dish => dish.date == _date ? dish : null).filter(dish => dish !== null);
 
   weekNumber.value = getISOWeekNumber(_date);
 });
@@ -154,12 +157,16 @@ function filterAndGtroup(dataArray, weekToFilter) {
 function transformToWeeklyMenuFormat(groupedMenuData) {
   const mealTypes = ['Desayuno', 'Almuerzo', 'Cena'];
   const days = Object.keys(groupedMenuData); // Obtiene las fechas: ['2025-12-01', '2025-12-02', ...]
-
+  const typeAbbreviationMap = {
+    'Desayuno': 'D',
+    'Almuerzo': 'A',
+    'Cena': 'C'
+  };
   // Inicializa el resultado con las filas para cada tipo de comida
   const weeklyMenuData = mealTypes.map(type => ({
-    'Tipo de Comida': type
+    'ID': typeAbbreviationMap[type],
+    'Tipo de Comida': type,
   }));
-
   // Rellena la tabla con los nombres de los platos
   for (const date of days) {
     const mealsForDay = groupedMenuData[date];
@@ -173,7 +180,11 @@ function transformToWeeklyMenuFormat(groupedMenuData) {
 
       if (row) {
         // Asigna el plato a la columna de la fecha
-        row[date] = dishName;
+        if (meal.hasOwnProperty('juices') && meal.juices) {
+          row[date] = dishName + ' (JUGOS)';
+        } else {
+          row[date] = dishName;
+        }
       }
     }
   }
@@ -240,11 +251,34 @@ const generatePdf = () => {
       });
 
       const headers = headerDates;
+      datesWithDay.unshift('');
+
+      const mainTitle = [
+        {
+          content: `HAROLD'S RESTAURANT`, // El título que quieres
+          colSpan: headers.length + 1, // ¡CLAVE! Hace que el título ocupe todas las columnas
+          styles: {
+            // fillColor: [100, 100, 100], // Color de fondo gris para el título
+            textColor: 0,             // Texto blanco
+            fontStyle: 'bold',
+            halign: 'center',           // Centra el título
+            fontSize: 15,
+            lineWidth: 0,
+          }
+        }
+      ];
+
+      // 🚨 REEMPLAZA ESTO CON TU CADENA BASE64 REAL DE TU LOGO
+      const logoDataUrl = '/logo.png';
+      const logoWidth = 14;  // Ancho del logo en mm
+      const logoHeight = 20; // Alto del logo en mm
+      const logoMarginX = 100;
+      const logoMarginY = 5;
 
       const titleHeader = [
         {
           content: `SEMANA ${weekNumber.value}`, // El título que quieres
-          colSpan: headers.length, // ¡CLAVE! Hace que el título ocupe todas las columnas
+          colSpan: headers.length + 1, // ¡CLAVE! Hace que el título ocupe todas las columnas
           styles: {
             // fillColor: [100, 100, 100], // Color de fondo gris para el título
             textColor: 0,             // Texto blanco
@@ -256,7 +290,21 @@ const generatePdf = () => {
       ];
       // Mapear los objetos planos a arrays de valores (AutoTable lo necesita así)
       // const data = pdfData.map(obj => headers.map(header => obj[header]));
-      const data = pivotedData.map(obj => headerDates.map(header => obj[header]));
+
+      let data = pivotedData.map(obj => headerDates.map(header => obj[header]));
+
+      data.map((row, indx) => {
+        if (indx === 0) {
+          row.unshift('D');
+        }
+        if (indx === 1) {
+          row.unshift('A');
+        }
+        if (indx === 2) {
+          row.unshift('C');
+        }
+      });
+
       const { jsPDF } = window.jspdf;
 
       // 3. Inicializar jsPDF
@@ -266,13 +314,15 @@ const generatePdf = () => {
         format: 'a4'
       });
 
+
+
       // 4. Agregar título
       // doc.text("Reporte de Menús Programados", 14, 10);
       // 5. Configurar la tabla
       doc.autoTable({
-        head: [titleHeader, datesWithDay],
+        head: [mainTitle, titleHeader, datesWithDay],
         body: data,
-        startY: 15,
+        startY: 20,
         theme: 'striped',
         styles: { halign: 'left', fontSize: 9 },
         headStyles: {
@@ -286,6 +336,7 @@ const generatePdf = () => {
           lineColor: [0, 0, 0] // Color negro para la línea
         },
       });
+      doc.addImage(logoDataUrl, 'PNG', logoMarginX, logoMarginY, logoWidth, logoHeight);
 
       // 6. Guardar el PDF
       doc.save(`menus_semana_${weekNumber.value}.pdf`);
@@ -309,13 +360,13 @@ const emoticons = [
     <div class="logo">
       <img src="/logo.png" width="50px" />
     </div>
-    <div>
+    <div class="container">
       <!-- <p class="title">Semana {{ weekNumber }}</p> -->
-      <button @click="generatePdf">Generar PDF</button>
+      <button @click="generatePdf" class="btn btn-primary">Generar Reporte</button>
       <DatePicker v-model:selected-date="selectedDate" :attributes="customAttributes" />
       <div class="wrapper-card">
         <div v-for="dish in dishes" class="wrapper-dish">
-          <div v-if="dish.date === formatLocalDate(selectedDate)" class="dish">
+          <div class="dish">
             <p class="title">🍽️ {{ dish.dish.dish_type }}</p>
             <p class="type">{{ emoticons[dish.dish.type - 1] }}</p>
             <div class="card">
@@ -339,6 +390,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.btn {
+  float: right;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -418,6 +474,11 @@ main {
 
   .wrapper-card .wrapper-dish:first-child {
     grid-column: 1;
+  }
+
+  .container {
+    max-width: 768px;
+    margin: auto;
   }
 }
 </style>

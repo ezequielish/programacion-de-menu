@@ -1,6 +1,7 @@
 <script setup>
 import { reactive, ref } from "vue"
 import DatePicker from "@/components/DatePicker.vue";
+import Swal from 'sweetalert2'
 
 import { toast } from "vue3-toastify";
 import api from "@/api/data.json"
@@ -25,6 +26,7 @@ const dishType = ref("0");
 const date = ref(new Date());
 // const selectedDate = formatLocalDate(new Date());
 const categoryIngredient = ref("0");
+const juices = ref(false);
 const steps = ref([0, 0, 0]);
 
 function getISOWeekNumber(dateString) {
@@ -68,6 +70,33 @@ const handleChangeCategoryAndType = () => {
 
     dish.value = result
 
+}
+
+/**
+ * Calcula la diferencia absoluta en días entre dos fechas.
+ *
+ * @param {string} dateString1 - La primera fecha en formato 'YYYY-MM-DD'.
+ * @param {string} dateString2 - La segunda fecha en formato 'YYYY-MM-DD'.
+ * @returns {number} - La diferencia en días (entero).
+ */
+function calculateDayDifference(dateString1, dateString2) {
+    // 1. Convertir las cadenas a objetos Date
+    const date1 = new Date(dateString1);
+    const date2 = new Date(dateString2);
+
+    // 2. Calcular la diferencia en milisegundos
+    // getTime() devuelve los milisegundos desde el Epoch (1 de enero de 1970)
+    const timeDifference = Math.abs(date2.getTime() - date1.getTime());
+
+    // 3. Definir la constante de conversión
+    // 1000 ms * 60 s * 60 min * 24 horas = milisegundos en un día
+    const oneDayInMilliseconds = 1000 * 60 * 60 * 24;
+
+    // 4. Convertir la diferencia de milisegundos a días
+    const dayDifference = timeDifference / oneDayInMilliseconds;
+
+    // 5. Devolver el resultado redondeado al número entero más cercano
+    return Math.floor(dayDifference);
 }
 const handleSaveDish = (index) => {
 
@@ -114,6 +143,47 @@ const handleSaveDish = (index) => {
 
         const arrayJSON = JSON.parse(programmedMenus);
 
+        const dayDiff = arrayJSON.map((item) => {
+            if (item.dish.id == _dish.id) {
+                const dayDiff = calculateDayDifference(item.date, _date);
+                return dayDiff
+            }
+        }).filter(d => d <= 10)
+
+        if (dayDiff.length) {
+            return Swal.fire({
+                title: "¿Deseas confirmar esta orden?",
+                text: "Parece que hiciste un pedido muy similar a este hace poco.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#2ECC71",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, Ordenar!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    arrayJSON.filter((item, indx) => {
+                        if (item.date == _date && item.dish.dish_type == _dish.dish_type) {
+                            arrayJSON.splice(indx, 1);
+                        }
+                    })
+
+                    const newDish = {
+                        date: _date,
+                        dish: _dish,
+                        week_day: weekNumber,
+                        juices: juices.value
+                    };
+                    arrayJSON.push(newDish);
+                    localStorage.setItem('menus', JSON.stringify(arrayJSON));
+                    toast.success(_dish.dish_type + ' Agregado a la fecha ' + _date, {
+                        position: toast.POSITION.TOP_CENTER,
+                    });
+                    window.scrollTo(0, 0)
+                }
+            });
+        }
+
         arrayJSON.filter((item, indx) => {
             if (item.date == _date && item.dish.dish_type == _dish.dish_type) {
                 arrayJSON.splice(indx, 1);
@@ -123,10 +193,14 @@ const handleSaveDish = (index) => {
         const newDish = {
             date: _date,
             dish: _dish,
-            week_day: weekNumber
+            week_day: weekNumber,
+            juices: juices.value
         };
         arrayJSON.push(newDish);
         localStorage.setItem('menus', JSON.stringify(arrayJSON));
+        dishType.value = '0';
+        categoriesIngredient.value = '0';
+        juices.value = false;
         toast.success(_dish.dish_type + ' Agregado a la fecha ' + _date, {
             position: toast.POSITION.TOP_CENTER,
         });
@@ -156,6 +230,11 @@ const handleSaveDish = (index) => {
             <option value="4">Cerdo</option>
             <option value="5">Huevos y Lácteos</option>
         </select>
+
+        <div class="input-wrapper">
+            <label for="juices">JUGOS</label>
+            <input type="checkbox" id="juices" v-model="juices" />
+        </div>
     </div>
     <div class="wrapper">
         <div v-for="(value, index) in dish" class="card">
@@ -208,6 +287,16 @@ const handleSaveDish = (index) => {
 .filters .f-t {
     margin-bottom: .5rem;
     font-weight: 700;
+}
+
+.input-wrapper {
+    display: flex;
+    width: 10%;
+    padding: .5rem;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: .9rem;
 }
 
 .filters select,

@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { setupCalendar, Calendar, DatePicker } from 'v-calendar'
+import 'sweetalert2/src/sweetalert2.scss'
 
 const app = createApp(App)
 

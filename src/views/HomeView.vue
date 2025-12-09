@@ -17,6 +17,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  max-width: 994px;
+  margin: 0 auto;
 }
 
 .logo {
